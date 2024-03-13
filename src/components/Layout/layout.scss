@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+:root{
+    --background-cor: #f3efe6;
+}
+
+.ni-page-layout {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+                            "menu"
+                            "image"
+                            "content";
+}
+
+.ni-menu-layout {
+    grid-area: menu;
+    background: var(--background-cor);
+    
+    
+}
+
+.ni-image-layout {
+    grid-area: image;
+    background: var(--background-cor);
+    //height: 400px;
+    display: block;
+
+    @media (max-width: 1366px) {
+
+        //height: 60vw;
+
+        
+    }
+    
+}
+
+.ni-content-layout {
+    grid-area: content;
+    background: var(--background-cor);
+    
+}

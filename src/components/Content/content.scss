@@ -1,0 +1,111 @@
+.ni-text-area {
+    width: 100%;
+    margin: 0;
+    //padding-left: calc((log()*100px));
+    padding-left: calc(26%);
+    padding-right: calc(26%);
+    //--varavel: 20%;
+    @media (max-width: 1366px) {
+        padding-left: calc(18%);
+        padding-right: calc(18%);
+    }
+    @media (max-width: 768px) {
+        padding-left: calc(14%);
+        padding-right: calc(14%);
+    }
+    @media (max-width: 450px) {
+        padding-left: calc(10%);
+        padding-right: calc(10%);
+    }
+}
+.ni-presentation{
+    hr{
+        display: block;
+        margin-left: 0;
+        margin-top: 2rem;
+        margin-bottom: 0;
+        height: 0.3rem;
+        width: 25%;
+        border: 0.1rem solid #c15742;
+        
+        background-color: #c15742;
+    }
+
+    h1{
+        font-size: 3.2vw;
+        margin-bottom: 3px;
+    }
+    h2{
+        margin-top: 0;
+        font-size: 1.8vw;
+        font-family: 'Times New Roman', Times, serif;
+        //font-weight: bold;
+    }
+    h4{
+        font-style:oblique;
+        font-size: 1.2vw;
+    }
+
+    @media (max-width: 1366px) {
+
+        h1{ font-size: 4.5vw; }
+        h2{ font-size: 2.2vw; }
+        h4{ font-size: 1.6vw; }
+    } 
+    @media (max-width: 768px) {
+        h1{ font-size: 4.6vw; }
+        h2{ font-size: 2.8vw; }
+        h4{ font-size: 2.6vw; }
+    }
+    @media (max-width: 450px) {
+        h1{ font-size: 6.8vw; }
+        h2{ font-size: 3.4vw; }
+        h4{ font-size: 3.2vw; }
+    }
+}
+
+h3 {
+    font-size: 1.6vw;
+}
+
+@media (max-width: 1366px) {
+    h3{ font-size: 2.2vw; }
+}
+@media (max-width: 768px) {
+    h3{ font-size: 2.8vw; }
+}
+@media (max-width: 450px) {
+    h3{ font-size: 3.6vw; }
+}
+
+.interactive-grafico {
+    padding-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    h1{
+        margin: 0;
+        font-size: 1.8vw;
+    }
+    @media (max-width: 1366px) {
+
+        h1{ font-size: 2.8vw; }
+        h2{ font-size: 2.2vw; }
+        h4{ font-size: 1.6vw; }
+    } 
+    @media (max-width: 768px) {
+        h1{ font-size: 3.5vw; }
+        h2{ font-size: 2.8vw; }
+        h4{ font-size: 2.6vw; }
+    }
+    @media (max-width: 450px) {
+        h1{ font-size: 4.2vw; }
+        h2{ font-size: 3.4vw; }
+        h4{ font-size: 3.2vw; }
+    }
+    img{
+        margin-top: 10px;
+        width: 100%;
+    }
+}

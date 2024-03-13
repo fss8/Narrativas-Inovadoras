@@ -1,0 +1,71 @@
+.ni-header {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    @media (max-width: 1366px) {
+        height: 20vw;
+    } 
+    @media (max-width: 768px) {
+        height: 25vw;
+    }
+    @media (max-width: 450px) {
+        height: 46vw;
+    }
+    @media (max-width: 450px) {
+        height: 60vw;
+    }
+}
+
+.ni-menu {
+    
+    background-color: black;
+    
+
+    
+
+    
+    .ni-logo {
+        margin-top: 0.4rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        .ni-logo-font1 {
+            font-size: 2.2rem;
+        }
+        h1 {
+            font-family: "Permanent Marker", cursive;
+            color: #fffefe;
+            margin: 0;
+            width: auto;
+        }
+    }
+    hr{
+        margin-top: 2rem;
+        margin-bottom: 0;
+        height: 0.3rem;
+        width: 80%;
+        border: 0.1rem solid #c15742;
+        
+        background-color: #c15742;
+    }
+
+}
+
+.ni-onda {
+    display: block;
+    
+    
+    img{
+        margin-top: -2px;
+        
+        height: 23vw;
+        margin-left: -1px;
+        width: 101%;
+    }
+}
