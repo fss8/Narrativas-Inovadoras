@@ -1,10 +1,19 @@
 import '/src/styles/theme.scss'
 import Layout from './components/Layout/index'
-
+// var express = require('express')
 
 const app = document.getElementById('app')
 
+
+
+// const app2 = express();
+
 app.appendChild(Layout)
+
+// app2.get('/', (req, res) =>
+//     //res.send("<h3>Rotas no Express</h3><p>Rota '/'")
+//     console.log("teste")
+// );
 
 
 init();

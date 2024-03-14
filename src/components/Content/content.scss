@@ -31,41 +31,60 @@
         background-color: #c15742;
     }
 
+    --font-texto:  2.3vw;
+
     h1{
-        font-size: 3.2vw;
+        font-family: "Literata", serif;
+        //font-style:;
+        font-weight: 900;
+        
+        font-size: var(--font-texto);
         margin-bottom: 3px;
     }
     h2{
         margin-top: 0;
-        font-size: 1.8vw;
-        font-family: 'Times New Roman', Times, serif;
+        font-size: calc((var(--font-texto) * 3)/5);
+        font-family: "Literata", serif;
+        font-style:normal;
+        font-weight:bold;
         //font-weight: bold;
+        
     }
     h4{
+        font-family: "Literata", serif;
         font-style:oblique;
-        font-size: 1.2vw;
+        font-weight:normal;
+        margin: 0;
+        font-size: calc((var(--font-texto) * 3)/5);
     }
 
     @media (max-width: 1366px) {
-
-        h1{ font-size: 4.5vw; }
-        h2{ font-size: 2.2vw; }
-        h4{ font-size: 1.6vw; }
+        --font-texto:  2.7vw;
+        //h1{ font-size: var(--font-texto); }
+        //h2{ font-size: calc(50% * var(--font-texto)); }
+        //h4{ font-size: 1.6vw; }
     } 
     @media (max-width: 768px) {
-        h1{ font-size: 4.6vw; }
-        h2{ font-size: 2.8vw; }
+        --font-texto:  3.3vw;
+        //h1{ font-size: var(--font-texto); }
+        //h2{ font-size: 1.8vw; }
         h4{ font-size: 2.6vw; }
     }
     @media (max-width: 450px) {
-        h1{ font-size: 6.8vw; }
-        h2{ font-size: 3.4vw; }
-        h4{ font-size: 3.2vw; }
+        --font-texto:  5.2vw;
+        //h1{ font-size: var(--font-texto); }
+        //h2{ font-size: 3.4vw; }
+        //h4{ font-size: 3.2vw; }
     }
 }
 
 h3 {
     font-size: 1.6vw;
+    font-family: "Literata", serif;
+
+    
+    //font-style:;
+    font-weight:normal;
 }
 
 @media (max-width: 1366px) {
@@ -109,3 +128,65 @@ h3 {
         width: 100%;
     }
 }
+
+div.menu-bar ul ul {
+display: none;
+}
+
+div.menu-bar li:hover > ul {
+display: block;
+}
+
+.imagesmapa{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 30vw;
+    .imggeral{
+        position: absolute;
+        //display: 'block';
+        width: 10%;
+        
+    }
+    .nordeste{
+        width:10.7%;
+        margin-left: 19.6%;
+        margin-top: 5.2%;
+    }
+    .sul{
+        width:7%;
+        margin-top: 21.5%;
+        margin-left: 2%;
+    }
+    .sudeste{
+        width:10.3%;
+        margin-top: 15.3%;
+        margin-left: 12%;
+    }
+    .norte{
+        width:21.8%;
+        margin-right: 8.9%;
+    }
+    .centrooeste{
+        width: 11.8%;
+        margin-top: 10.23%;
+        margin-left: 0.14%;
+    }
+    // .teste{
+    //     display: none;
+    // }
+    .descricao{
+        width: 10%;
+        margin-top: 15%;
+        margin-left: 20%;
+    }
+    .infos{
+        width: 25%;
+        margin-top: 7%;
+        margin-left: 66%;
+    }
+}
+
+// .imagesmapa nordeste:hover > teste{
+//     display: block;
+// }

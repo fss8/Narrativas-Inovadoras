@@ -21,8 +21,8 @@
 
 .ni-menu {
     
-    background-color: black;
-    
+    //background-color: black;
+    z-index: 3;
 
     
 
@@ -59,13 +59,21 @@
 
 .ni-onda {
     display: block;
+    position: absolute;
     
     
     img{
-        margin-top: -2px;
+        //margin-top: -2px;
         
-        height: 23vw;
-        margin-left: -1px;
-        width: 101%;
+        height: 20vh;
+        //margin-left: -1px;
+        width: 100%;
+        @media (max-width: 1366px) {
+            height: 23vh;
+        } 
+        @media (max-width: 768px) {
+            height: 25vh;
+        }
     }
+    
 }

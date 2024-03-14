@@ -1,7 +1,7 @@
 import h from "hyperscript";
 import helpers from "hyperscript-helpers";
 import './media.scss'
-import Imagem from '../../assets/imagem-central2.png'
+import Imagem from '../../assets/imagem-central3.png'
 
 const { div, img } = helpers(h);
 

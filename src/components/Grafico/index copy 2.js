@@ -165,65 +165,56 @@ var tabelaARTISTAS = {
 }
 const updateGrafico = (name, number) => {
     console.log('Update grafico' + number);
-
-    const actualHeight = calculaHeight(name, number)
-    const actualValue = tabelaARTISTAS[actualList[number]]
-    var maiornumeroatual = 0
+    var actualHeight = 0
+    var maiornumero = 0
+    var indexMaiornumero = 0
+    var actualValue = 0
+    //const actualHeight, maiornumero = calculaHeight(name, number)
+    actualValue, maiornumero, indexMaiornumero = tabelaARTISTAS[actualList[number]]
 
     var image = CelularGrande
-    var maiornumero = 0
     
         
     for (var i=0; i< actualList.length; i++){
-        
-        const valor = tabelaARTISTAS[actualList[i]]
-        const namevizinho = actualList[i]
-        const hvizinho = calculaHeight(namevizinho, valor)
+        if (actualList[i] != name){
+            const valor = tabelaARTISTAS[actualList[i]]
+            const namevizinho = actualList[i]
+            const hvizinho = calculaHeight(namevizinho, valor)
 
-        var largura = 100;
-        var image2 = CelularGrande
-        console.log(image2)
-        image2 = getImageCelular(hvizinho)
-        largura = getLargura(hvizinho)
-        const grab2 = div(img({src: image2, className: 'celular-img', style:'height:'+hvizinho.toFixed(2).toString()+'%; width:'+largura+'%'}))
-        const id = 'imagemGrafico' + (i+1).toString()
-        const texto = 'txt' + (i+1).toString()
-        document.getElementById(id).innerHTML = grab2.innerHTML
-        document.getElementById(texto).innerHTML = namevizinho
-
-        if (maiornumero < tabelaARTISTAS[actualList[i]]) {
-            maiornumero = tabelaARTISTAS[actualList[i]]
+            var largura = 100;
+            var image2 = CelularGrande
+            console.log(image2)
+            image2 = getImageCelular(hvizinho)
+            largura = getLargura(hvizinho)
+            const grab2 = div(img({src: image2, className: 'celular-img', style:'height:'+hvizinho.toFixed(2).toString()+'%; width:'+largura+'%'}))
+            const id = 'imagemGrafico' + (i+1).toString()
+            const texto = 'txt' + (i+1).toString()
+            document.getElementById(id).innerHTML = grab2.innerHTML
+            document.getElementById(texto).innerHTML = namevizinho
         }
     }
 
-
-
     const maxHeight = 100+6
-    const eixoy = div(div({className: 'desc', style:'height:calc((('+ maxHeight +') * var(--height-var))/100 )'}, div({className: 'textodesc'}, convertValue(maiornumero))))
+    const eixoy = div(div({className: 'desc', style:'height:calc((('+ maxHeight +') * var(--height-var))/100 )'}, div({className: 'textodesc'}, maiornumero.toString())))
     document.getElementById('valoresComparacao').innerHTML = eixoy.innerHTML
-
     
     
-    
-    // var largura = 0;
-    // image = getImageCelular(actualHeight)
-    // largura = getLargura(actualHeight)
+    var largura = 0;
+    image = getImageCelular(actualHeight)
+    largura = getLargura(actualHeight)
     //OBS SE ELE FOR MAIOR, CALCULAR NOVOS HEIGHTS DE TODOS OS ELEMENTOS
 
-    // const grab2 = div(img({src: image, className: 'celular-img', style:'height:'+actualHeight.toFixed(2).toString()+'%; width:'+largura+'%'}))
-    // const id = 'imagemGrafico' + number.toString()
-    // const texto = 'txt' + number.toString()
-    // document.getElementById(id).innerHTML = grab2.innerHTML
-    // document.getElementById(texto).innerHTML = name
+    const grab2 = div(img({src: image, className: 'celular-img', style:'height:'+actualHeight.toFixed(2).toString()+'%; width:'+largura+'%'}))
+    const id = 'imagemGrafico' + number.toString()
+    const texto = 'txt' + number.toString()
+    document.getElementById(id).innerHTML = grab2.innerHTML
+    document.getElementById(texto).innerHTML = name
 }
 
 const convertValue = (value) => {
     var texto = value.toString()
-    if (value > 10000000){
-        texto = (value / 1000000.00).toFixed(0).toString() + ' mi'
-    }
-    if (value > 1000000){
-        texto = (value / 1000000.00).toFixed(1).toString() + ' mi'
+    if (value > 1000000.00){
+        texto = (value / 10000.00).toFixed(0).toString() + ' mi'
     }
     return texto
 }
@@ -274,19 +265,21 @@ const calculaHeight = (name, number) => {
     const numeroabsoluto = tabelaARTISTAS[name]
     console.log(numeroabsoluto)
     var maiornumero = 0
+    var indexMaior = 0
     for(var i = 0; i < actualList.length; i++){
         if (maiornumero < tabelaARTISTAS[actualList[i]]) {
             maiornumero = tabelaARTISTAS[actualList[i]]
+            indexMaior = i
         }
     }
 
     
     if (maiornumero == 0){
-        return 0
+        return 0, 0, 0
     }else{
         const porcentagem = (numeroabsoluto*100)/maiornumero
         console.log('PORCENTAGEM: '+porcentagem)
-        return porcentagem
+        return porcentagem, maiornumero, indexMaior
     }   
 }
 
@@ -308,7 +301,7 @@ const imagesFunction = (img1 = CelularGrande) => {
             ,
             div({className: 'grafico2'}, [
                 div({className: 'valores', id: 'valoresComparacao'}, 
-                    div({className: 'desc1 desc'}, div({className: 'textodesc'}, '1.9 mi'))
+                    div({className: 'desc1 desc'}, div({className: 'textodesc'}, '1.2 mi'))
                     
     
                 )
